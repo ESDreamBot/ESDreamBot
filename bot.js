@@ -576,7 +576,7 @@ var bc = new
 Discord.RichEmbed()
 .setColor('RANDOM')
 .setDescription(EmbedRep)
-.setFooter(`${prefix}invite | لدعوة بوت`)
+.setFooter(``)
 m.send({ embed: bc })
 msg.delete();
 })
@@ -594,6 +594,15 @@ msg.delete();
 });
 	  
  
+
+
+client.on('message', msg => {
+  if (msg.content === '=invite') {
+    msg.reply(', https://discordapp.com/api/oauth2/authorize?client_id=542716405871673355&permissions=0&scope=bot');
+  }
+});
+
+
 	 
 
 
