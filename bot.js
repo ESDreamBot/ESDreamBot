@@ -1015,6 +1015,7 @@ reaction1.on("collect", r => {
 ❖=roll [number] | قرعه
 ❖=bot | معلومات البوت
 ❖=id | معلومات حسابك
+❖=ping | البنق حقك
 
 `)
    message.author.sendEmbed(embed)
@@ -1085,7 +1086,7 @@ client.on('ready', () => {
       console.log(`ON ${client.guilds.size} Servers '     Script By : DREAM ' `);
     console.log(`----------------`);
   console.log(`Logged in as ${client.user.tag}!`);
-client.user.setGame(`ESDream Bot`,"http://twitch.tv/Light")
+client.user.setGame(`=help | =invite`,"http://twitch.tv/Light")
 client.user.setStatus("dnd")
 });
 
