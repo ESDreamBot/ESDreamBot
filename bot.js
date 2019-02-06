@@ -413,9 +413,94 @@ m.sendMessage(args)
 
 
 
+client.on('message', emoko => {
+  if (emoko.content === "=date") {
+         if (!emoko.channel.guild) return emoko.reply('** This command only for servers **');  
+         var currentTime = new Date(),
+            hours = currentTime.getHours() + 4 ,
+            hours2 = currentTime.getHours() + 3 ,
+            hours3 = currentTime.getHours() + 2 ,
+            hours4 = currentTime.getHours() + 3 ,
+            minutes = currentTime.getMinutes(),
+            seconds = currentTime.getSeconds(),
+            Year = currentTime.getFullYear(),
+            Month = currentTime.getMonth() + 1,
+            Day = currentTime.getDate();
+             var h = hours
+  if(hours > 12) {
+               hours -= 12;
+            } else if(hours == 0) {
+                hours = "12";
+            }  
+             if(hours2 > 12) {
+               hours2 -= 12;
+            } else if(hours2 == 0) {
+                hours2 = "12";
+            
+            }  
+if(hours3 > 12) {
+               hours3 -= 12;
+            } else if(hours3 == 0) {
+                hours3 = "12";
+            } 
+            if (minutes < 10) {
+                minutes = '0' + minutes;
+            }
+
+
+            var suffix = 'صباحاَ';
+            if (hours >= 12) {
+                suffix = 'مساء';
+                hours = hours - 12;
+            }
+            if (hours == 0) {
+                hours = 12;
+            }
+ 
+
+const embed = new Discord.RichEmbed()
+                .setThumbnail("https://i.imgur.com/ib3n4Hq.png") 
+                .setTitle( "『التاريخ  والوقت』")
+                .setColor('RANDOM')
+                .setFooter(emoko.author.username, emoko.author.avatarURL)
+                .addField('الامارات',
+                "『"+ hours + ":" + minutes +":"+ seconds + "』")
+                 .addField('مكه المكرمه',
+                "『"+ hours2 + ":" + minutes +":"+ seconds  + "』") 
+                .addField('مصر',
+                "『"+ hours3 + ":" + minutes +":"+ seconds  + "』") 
+                
+                .addField('Date',
+                "『"+ Day + "-" + Month + "-" + Year +  "』")
+
+
+  emoko.channel.sendEmbed(embed);
+   }
+});
 
 
 
+
+client.on('message', message => {
+  if(message.content === prefix + 'stats') {
+    message.channel.send('**I have `' + `${client.guilds.size}` + '` Server 🔥, `' + `${client.channels.size}` + '` Channels and `' + `${client.users.size}` + '` users.**')
+    message.channel.send('**- If you want me to join in your server? just do `' + `${prefix}invite` + '` **');
+  }
+});
+
+
+
+client.on("message",msg => {
+var role1 = msg.guild.roles.find("name","@everyone")
+if(msg.content === 'closerooms'){
+msg.guild.channels.forEach(p => {
+p.overwritePermissions(role1, {
+READ_MESSAGES: false,
+SEND_MESSAGES: false
+})
+})
+}
+});
 
 
 
