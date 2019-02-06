@@ -209,50 +209,6 @@ client.on('message', fkk => {
 
 
 
-client.on("message", msg=>{
-if( msg.content.startsWith(`${prefix}bot`)){ // الامر (bot)
-  if(!msg.channel.guild) return msg.reply('** This command only for servers **');
- if (msg.author.bot) return;
-var api = `${Math.round(client.ping)}`
-    let uptime = client.uptime; let days = 0; let hours = 0; let minutes = 0; let seconds = 0; let notCompleted = true;
-while (notCompleted) {
-  if (uptime >= 8.64e+7) {
-      days++;
-      uptime -= 8.64e+7;
-  } else if (uptime >= 3.6e+6) {
-      hours++;
-      uptime -= 3.6e+6;
-  } else if (uptime >= 60000) {
-      minutes++;
-      uptime -= 60000;
-  } else if (uptime >= 1000) {
-      seconds++;
-      uptime -= 1000;
-  }
-  if (uptime < 1000) notCompleted = false;
-}
-moment.locale("en-ca")
-let embedbot = new Discord.RichEmbed()
-.setColor("RANDOM")
-.setAuthor(`${botName}`,`${urlbot}`)
-.setThumbnail(`${urlbot}`)
-.addField('🔰 **Bot Name** :' , `[ ${client.user.tag} ]` , true)
-.addField(':trident: **Bot Owner** :' , `[ ! Dream ! hamodii_yt#0001 And @✠╠îESDream╣ON#7991 ]` , true)
-.addField(`:earth_africa: Servers online`,client.guilds.size, true)
-.addField(`:busts_in_silhouette: Members`,client.users.size, true)
-.addField(`:love_letter: Channel online`,client.channels.size, true)
-.addField(`:incoming_envelope: Ping Bot`, `${api}`,true)
-.addField(`:paperclip: Prefix`, `${prefix}`,true)
-.addField(`:id: Id`, `${client.user.id}`,true)
-.addField(`:scales: RamUsage`, `${(process.memoryUsage().rss / 1048576).toFixed()}MB`,true)
-.addField(`:hammer_pick: Node.js Version`, `${process.version}`,true)
-.addField(`:stopwatch: CreatedAt`, `${moment(client.user.createdAt).fromNow()}`,true)
-.addField(`:alarm_clock: Uptime`, `${days}:${hours}:${minutes}:${seconds}`,true)
-.setTimestamp()
-.setFooter(client.user.username,client.user.displayAvatarURL)
-msg.reply(embedbot);
-}});
-
 
 
 
@@ -332,94 +288,7 @@ let mrxembed = new Discord.RichEmbed()
 welcomer.send({embed:mrxembed});          
 }})
  
-client.on('guildMemberAdd', member => {
-member.guild.fetchInvites().then(guildInvites => {
-const ei = invites[member.guild.id];
-invites[member.guild.id] = guildInvites;
-const invite = guildInvites.find(i => ei.get(i.code).uses < i.uses);
-const inviter = client.users.get(invite.inviter.id);
-const logChannel = member.guild.channels.find(channel => channel.name === `main-chat`);
-if(!logChannel) return;
-setTimeout(() => {
-logChannel.send(`Invited By: <@${inviter.id}>`);
-},2000)
-});
-});
- 
-client.on('guildMemberAdd',async member => {
-const Canvas = require('canvas');
-const jimp = require('jimp');
-const w = ['./welcome_4.png'];
-let Image = Canvas.Image,
-    canvas = new Canvas(800, 300),
-    ctx = canvas.getContext('2d');
-ctx.patternQuality = 'bilinear';
-ctx.filter = 'bilinear';
-ctx.antialias = 'subpixel';
-ctx.shadowColor = 'rgba(0, 0, 0, 0.4)';
-ctx.shadowOffsetY = 2;
-ctx.shadowBlur = 2;
-ctx.stroke();
-ctx.beginPath();
- 
-fs.readFile(`${w[Math.floor(Math.random() * w.length)]}`, function (err, Background) {
-    if (err) return console.log(err);
-    let BG = Canvas.Image;
-    let ground = new Image;
-    ground.src = Background;
-    ctx.drawImage(ground, 0, 0, 800, 300);
- 
-})
- 
-        let url = member.user.displayAvatarURL.endsWith(".webp") ? member.user.displayAvatarURL.slice(5, -20) + ".png" : member.user.displayAvatarURL;
-        jimp.read(url, (err, ava) => {
-            if (err) return console.log(err);
-            ava.getBuffer(jimp.MIME_PNG, (err, buf) => {
-         if (err) return console.log(err);
- 
-  ctx.font = '36px Arial';
-  ctx.fontSize = '72px';
-  ctx.fillStyle = "#ffffff";
-  ctx.textAlign = "center";
-  ctx.fillText(member.user.username, 545, 177);
- 
-  ctx.font = '16px Arial Bold';
-  ctx.fontSize = '72px';
-  ctx.fillStyle = "#ffffff";
-  ctx.textAlign = "center";
-  ctx.fillText(`${member.guild.memberCount} Members`, 580, 200);
- 
-  let Avatar = Canvas.Image;
-  let ava = new Avatar;
-  ava.src = buf;
-  ctx.beginPath();
-  ctx.arc(169.5, 148, 126.9, -100, Math.PI * 2, true);
-  ctx.closePath();
-  ctx.clip();
-  ctx.drawImage(ava, 36, 21, 260, 260);
-   
-  let c = member.guild.channels.find('name', `welcome-l-مرحبا`)
-  if(!c) return;
-  c.sendFile(canvas.toBuffer());
- 
-});
-});
-});
- 
-const invites = {};
- 
-const wait = require('util').promisify(setTimeout);
- 
-client.on('ready', () => {
-wait(1000);
- 
-client.guilds.forEach(g => {
-g.fetchInvites().then(guildInvites => {
-invites[g.id] = guildInvites;
-});
-});
-});
- 
+
  
  
 client.on('message', message => {//Mrx - Dev
@@ -503,49 +372,6 @@ client.on('message', function(message) {
   }
 });
 
-
-          client.on('message', message => {
-            let args = message.content.split(' ').slice(1);
-            if(message.content.split(' ')[0] == `${prefix}color`){
-            const embedd = new Discord.RichEmbed()
-            .setFooter('Requested by '+message.author.username, message.author.avatarURL)
-            .setDescription(`**لا يوجد لون بهذا الأسم ** ❌ `)
-            .setColor(`ff0000`)
-           
-            if(!isNaN(args) && args.length > 0)
-           
-           
-            if    (!(message.guild.roles.find("name",`${args}`))) return  message.channel.sendEmbed(embedd);
-           
-           
-            var a = message.guild.roles.find("name",`${args}`)
-             if(!a)return;
-            const embed = new Discord.RichEmbed()
-           
-            .setFooter('Requested by '+message.author.username, message.author.avatarURL)
-            .setDescription(`**Done , تم تغير لونك . ✅ **`)
-           
-            .setColor(`${a.hexColor}`)
-            message.channel.sendEmbed(embed);
-            if (!args)return;
-            setInterval(function(){})
-               let count = 0;
-               let ecount = 0;
-            for(let x = 1; x < 201; x++){
-           
-            message.member.removeRole(message.guild.roles.find("name",`${x}`))
-           
-            }
-             message.member.addRole(message.guild.roles.find("name",`${args}`));
-           
-           
-            }
-            });
-			
-			
-
-
-c		
 
 
 client.on('message', message => {
