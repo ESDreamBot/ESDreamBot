@@ -316,23 +316,7 @@ client.on('message', message => {//Mrx - Dev
 
 
 
-client.on("guildCreate", guild => {//Narox Dev
-    client.on("guildDelete", guild2 => {//Narox Dev
-    var prefix = '='//البرفكس
-        client.on("message", msg => {//Narox Dev
-        
-            if(msg.content.startsWith(prefix + "lastguild")){
-                msg.channel.send(`${msg.author}\`\`\`css
-اخر سيرفر دخلته : [ ${guild.name} ] -=- الاعضاء : ${guild.memberCount} 
--==================================================================-
-اخر سيرفر خرجت منه : [ ${guild2.name} ] -=- الاعضاء : [ ${guild2.memberCount} ]\`\`\`
-${msg.author}`)
-            
-            }//Narox Dev
-        })//Narox Dev
-        })//Narox Dev
-    })//Narox Dev
-});//Narox Dev
+
 
 
 client.on('message', function(message) {
@@ -350,42 +334,9 @@ client.on('message', function(message) {
 });
 
 
-      client.on('message', async message => {//Narox
-  let messageArray = message.content.split(' ');
-  let args = messageArray.slice(1);//Narox
-  if(message.content.startsWith(prefix + "invite")) {
-    if(!args) return message.reply('**Select an invitation name**');
-    message.guild.fetchInvites().then(i => {
-      let inv = i.get(args[0]);//Narox
-      if(!inv) return message.reply(`**I could not find ${args}**`);
-      var iNv = new Discord.RichEmbed()//Narox
-      .setAuthor(message.author.username,message.author.avatarURL)
-      .setThumbnail(message.author.avatarURL)//Narox
-      .addField('# - The owner of the invitation',inv.inviter,true)
-      .addField('# - The invitation Room',inv.channel,true)//Narox
-      .addField('# - The end date of the invitation',moment(inv.expiresAt).format('YYYY/M/DD:h'),true)
-      .addField('# - Invitation created',moment(inv.createdAt).format('YYYY/M/DD:h'),true)
-      .addField('# - Duration of the invitation',moment(inv.maxAge).format('DD **hour** h **day**'),true)
-      .addField('# - Uses',inv.uses || inv.maxUses,true)
-      message.channel.send(iNv);//Narox
-    });//Narox
-  }
-});
 
 
 
-client.on('message', message => {
-     var prefix = "=";
-              if (!message.channel.guild) return;
-     if(message.content.startsWith(prefix + 'memberinfo')) {
-      var GK = new Discord.RichEmbed()
-      .setThumbnail(message.author.avatarURL)
-      .setFooter(message.author.username, message.author.avatarURL)
-      .setTitle('🌍| Members info')
-      .addBlankField(true)
-      .addField('Mmeber Count',`${message.guild.memberCount}`)
-      message.channel.send(GK);
-    });
 
 
 client.on('message', message => {
@@ -421,14 +372,6 @@ client.on('message', message => {
    
    
    
-   client.on('message', message=> {
-    if (message.author.bot) return;
-    if (message.isMentioned(client.user))
-    {
-    message.reply(`**My Prefix is `` ${prefix}`` `)
-    }
-});
-
 
 
 client.on("message", (message) => {
