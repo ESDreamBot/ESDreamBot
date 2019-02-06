@@ -774,6 +774,138 @@ var mentionned = message.mentions.members.first();
 
 
  
+   client.on("message", function(message) {
+    var prefix = "$";
+   if(message.content.startsWith(prefix + "help")) {
+    let messageArgs = message.content.split(" ").slice(1).join(" ");
+    let messageRPS = message.content.split(" ").slice(2).join(" ");
+    let arrayRPS = ['**# - Rock**','**# - Paper**','**# - Scissors**'];
+    let result = `${arrayRPS[Math.floor(Math.random() * arrayRPS.length)]}`;
+    var RpsEmbed = new Discord.RichEmbed()
+    .setAuthor(message.author.username)
+    .setThumbnail(message.author.avatarURL)
+    .addField("Puplic | عامه","🗣",true)
+    .addField("Admin | ادمنيه","🔴",true)
+    .addField("Games | العاب","🕹",true)
+        .addField("BoardCast | بورد كاست","📢",true)
+    message.channel.send(RpsEmbed).then(msg => {
+        msg.react('🗣')
+        msg.react("🔴")
+        msg.react("🕹")
+                msg.react("📢")
+.then(() => msg.react('🗣'))
+.then(() =>msg.react('🔴'))
+.then(() => msg.react('🕹'))
+.then(() => msg.react('📢'))
+let reaction1Filter = (reaction, user) => reaction.emoji.name === '🗣' && user.id === message.author.id;
+let reaction2Filter = (reaction, user) => reaction.emoji.name === '🔴' && user.id === message.author.id;
+let reaction3Filter = (reaction, user) => reaction.emoji.name === '🕹' && user.id === message.author.id;
+let reaction4Filter = (reaction, user) => reaction.emoji.name === '📢' && user.id === message.author.id;
+let reaction1 = msg.createReactionCollector(reaction1Filter, { time: 20000 });
+       
+let reaction2 = msg.createReactionCollector(reaction2Filter, { time: 19000 });
+let reaction3 = msg.createReactionCollector(reaction3Filter, { time: 18000 });
+let reaction4 = msg.createReactionCollector(reaction4Filter, { time: 18000 });
+reaction1.on("collect", r => {
+  const embed = new Discord.RichEmbed()
+      .setThumbnail('https://images-ext-2.discordapp.net/external/JD7xvknBVacXHoC2re78AtJN4PUY5IjUZy1uWIqzObI/https/s3.amazonaws.com/eclincher.wp.upload/wp-content/uploads/2015/08/25155834/people-icon.png')
+      .setColor("#000000")
+      .setDescription(`
+             -=- اوامر عامة -=-
+❖$avatar @somone | صورتك او صوره الي منشنته
+❖$server | معلومات السيرفر
+❖$angaz | كتابه كلامك بصوره انجاز ماينكرفتي
+❖$members | حالات الاعضاء
+❖$serveravatar | صوره السيرفر
+❖$inv | رابط اضافه البوت
+❖$say [message] | تكرار كلامك ببوت بنفس صورتك واسمك
+❖$support | رابط سيرفر السبورت
+❖$bans | عدد الاشخاص المبندين [NEW]
+❖$emojilist | قائمه اليموجيات [NEW]
+❖$day | تفاصيل اليوم
+❖$perms | يوريك الصلاحيات الي معك [NEW]
+❖$cat | صور قطط
+❖$dog | صور كلاب
+❖$skin [name] | يجيبلك سكن الي كتبت اسمه [NEW]
+❖$roll [number] | قرعه
+❖$draw [message] | كتابه كلامك في صوره
+❖$bot | معلومات البوت
+❖$ranks | يعرض لك الرتب الي بلسيرفر
+❖$user | وقت صنع حسابك ودخولك السيرفر
+❖$id | معلومات حسابك
+❖$stim | منبه
+`)
+   message.author.sendEmbed(embed)
+      message.reply('تم ارسالك بلخاص')
+})
+reaction2.on("collect", r => {
+      const embed = new Discord.RichEmbed()
+      .setThumbnail('https://images-ext-1.discordapp.net/external/DbPeTYlfGrBFd0B-SDcdVZPbPJRE8xiNcH9sG2sC5sA/http/www.expertizacontabila.com/images/staffmap-icon.png')
+      .setColor("#000000")
+      .setDescription(`
+            -=- اوامر ادمنيه -=-
+❖$ban @name [reason] | اعطاء العضو باند
+❖$kick @name [reason] | اعطاء العضو كيك
+❖$mute @name [reason] | اعطاء العضو ميوت
+❖$unmute @name [reason] | ازاله الميوت من العضو
+❖$cc [number] | صنع رتب برقم
+❖$clear [number] | مسح الرسائل
+❖$dr [name] | مسح روم [NEW]
+❖$hidec | اخفاء الروم [NEW]
+❖$showc | فتح الروم [NEW]
+❖$ct [name] | صنع روم كتابي [NEW]
+❖$cv [name] | صنع روم صوتي [NEW]
+❖$setbot | صنع روم يكون فيه عدد البوتات بلسيرفر
+❖$setmember | صنع روم يكون فيه عدد الاعضاء بلسيرفر
+❖$role @someone [rank] | اعطاء رتبه لشخص
+❖$role all [rank]| اعطاء رتبه للكل
+❖$role bots [rank]| اعطاء رتبه لكل البوتات
+❖$role humans [rank] | اعطاء رتبه للبشريين
+❖$roleremove @someone [rank] | ازاله الرتبه من شخص معين
+❖$move @someone | سحب شخص الي روم
+❖$mutechannel | قفل الشات
+❖$unmutechannel | فك منع الكتابه بلروم
+`)
+   message.author.sendEmbed(embed)
+      message.reply('تم ارسالك بلخاص')
+})
+reaction3.on("collect", r => {
+  const embed = new Discord.RichEmbed()
+  .setThumbnail('https://images-ext-1.discordapp.net/external/4IGqoA1bqVqu_o2I-jY51fqJFy2S8f8NrzcnzxhFtVU/http/reli.sh/wp-content/themes/relish/assets/img/services/icon-games.png')
+      .setColor("#000000")
+      .setDescription(`
+             -=- العاب -=-
+❖$rps [ورقة - مقص - حجر]
+❖$hack @name | لعبه الهكر مع ذكر اسمك للي هكرته
+❖$hac-2 @name
+❖$نكت مضحكه | نكت
+❖$لعبه اعلم | اعلم
+❖$لعبه اموجي | ايموجي
+❖$لعبه ماينكرفت | ماينكرفت
+❖$لعبه عواصم | عواصم
+❖$لعبه فكك | فكك
+`)
+   message.author.sendEmbed(embed)
+   message.reply('تم ارسالك بلخاص')
+})
+reaction3.on("collect", r => {
+  const embed = new Discord.RichEmbed()
+  .setThumbnail('https://cdn.discordapp.com/attachments/476524644115939338/480592850925387776/bc.png')
+      .setColor("#000000")
+      .setDescription(`
+             -=- اوامر بورد كاست -=-
+❖$bc [message] | بورد كاست للكل و مطور
+❖$2bc [message] | بورد كاست للكل غير مطور
+❖$3bc [message] | بورد كاست للونلاين فقط و غير مطور
+❖$user-bc @name [message] | رساله لشخص واحد
+❖$role-bc @rank [message] | رساله لكل من يملك الرتبه الممشنه
+`)
+   message.author.sendEmbed(embed)
+})
+    })
+}
+});
+ 
 
 
 
