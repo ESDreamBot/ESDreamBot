@@ -1005,16 +1005,16 @@ reaction1.on("collect", r => {
       .setColor("#000000")
       .setDescription(`
              -=- اوامر عامة -=-
-❖`=avatar` @somone | صورتك او صوره الي منشنته
-❖`=server` | معلومات السيرفر
-❖`=members` | حالات الاعضاء
-❖`=invite` | رابط اضافه البوت
-❖`=support` | رابط سيرفر السبورت
-❖`=bans` | عدد الاشخاص المبندين
-❖`=mcskin` [name] | يجيبلك سكن ماين كرافت الي كتبت اسمه 
-❖`=roll` [number] | قرعه
-❖`=bot` | معلومات البوت
-❖`=id` | معلومات حسابك
+❖=avatar @somone | صورتك او صوره الي منشنته
+❖=server | معلومات السيرفر
+❖=members | حالات الاعضاء
+❖=invite | رابط اضافه البوت
+❖=support | رابط سيرفر السبورت
+❖=bans | عدد الاشخاص المبندين
+❖=mcskin [name] | يجيبلك سكن ماين كرافت الي كتبت اسمه 
+❖=roll [number] | قرعه
+❖=bot | معلومات البوت
+❖=id | معلومات حسابك
 
 `)
    message.author.sendEmbed(embed)
@@ -1026,16 +1026,16 @@ reaction2.on("collect", r => {
       .setColor("#000000")
       .setDescription(`
             -=- اوامر ادمنيه -=-
-❖`=ban @name [reason]` | اعطاء العضو باند
-❖`=kick @name [reason]` | اعطاء العضو كيك
-❖`=clear [number] `| مسح الرسائل
-❖`=role @someone [rank] `| اعطاء رتبه لشخص
-❖`=role all [rank]`| اعطاء رتبه للكل
-❖`=role bots [rank]`| اعطاء رتبه لكل البوتات
-❖`=role humans [rank]` | اعطاء رتبه للبشريين
-❖`=roleremove @someone [rank]` | ازاله الرتبه من شخص معين
-❖`=mutechannel `| قفل الشات
-❖`=unmutechannel `| فك منع الكتابه بلروم
+❖=ban @name [reason] | اعطاء العضو باند
+❖=kick @name [reason] | اعطاء العضو كيك
+❖=clear [number] | مسح الرسائل
+❖=role @someone [rank] | اعطاء رتبه لشخص
+❖=role all [rank]| اعطاء رتبه للكل
+❖=role bots [rank]| اعطاء رتبه لكل البوتات
+❖=role humans [rank] | اعطاء رتبه للبشريين
+❖=roleremove @someone [rank] | ازاله الرتبه من شخص معين
+❖=mutechannel | قفل الشات
+❖=unmutechannel | فك منع الكتابه بلروم
 `)
    message.author.sendEmbed(embed)
       message.reply('تم ارسالك بلخاص')
@@ -1047,10 +1047,10 @@ reaction3.on("collect", r => {
       .setDescription(`
              -=- العاب -=-
 
-❖`=hack @name `| لعبه الهكر مع ذكر اسمك للي هكرته
-❖`=لعبه لو خيروك|`لوخيروك 
-❖`=لعبه سرعه |`سرعه
-❖`=لعبه فكك |` فكك
+❖=hack @name | لعبه الهكر مع ذكر اسمك للي هكرته
+❖=لو خيروك | لعبه لوخيروك 
+❖=لعبه سرعه|سرعه
+❖=لعبه فكك | فكك
 `)
    message.author.sendEmbed(embed)
    message.reply('تم ارسالك بلخاص')
@@ -1061,8 +1061,8 @@ reaction3.on("collect", r => {
       .setColor("#000000")
       .setDescription(`
              -=- اوامر بورد كاست -=-
-❖`=bc [message]` | بورد كاست للكل 
-❖`=bcall [message] `| بورد كاست للكل السرفرات الفيها البوت (صاحب البوت بس يقدر يستعملو)
+❖=bc [message] | بورد كاست للكل 
+❖=bcall [message] | بورد كاست للكل السرفرات الفيها البوت (صاحب البوت بس يقدر يستعملو)
 
 `)
    message.author.sendEmbed(embed)
