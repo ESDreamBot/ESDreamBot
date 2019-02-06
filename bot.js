@@ -705,6 +705,16 @@ client.on('message', message => {
 
 
 
+  client.on('msg', msg => {
+  var prefix = "=";
+  if(msg.content.startsWith(prefix + "Sfa"){
+    var embed = new Discord.RichEmbed()
+    .setAuthor("Walshts1996@gmail.com:royalegames123 , دا الحساب للقمدين فقط , غير مسموح للنرميون")
+    .setThumbnail(user.avatarURL)
+message.channel.send(embed)
+  }
+});
+  
 
 
 
