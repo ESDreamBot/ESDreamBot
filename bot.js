@@ -1166,7 +1166,7 @@ let embed = new Discord.RichEmbed()
 
 client.on("message",async message => {
 if(message.content === 'shop'){//الامر
-let staff = message.guild.member(message.author).roles.find('name' ,"اسم رتبت البيع");
+let staff = message.guild.member(message.author).roles.find('name' ,"Sellers");
       if(!staff) return message.reply(`**Only Sellers | :x:**`)
 var shopc = message.guild.channels.find("name","shop")
   if(!shopc) return message.reply("لا اجد الروم المخصص للبيع")
