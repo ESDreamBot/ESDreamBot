@@ -1258,7 +1258,7 @@ client.on("ready", () => {
         client.guilds.get("542676337387634688").roles.find("name", "RainBow").edit({
             color : "RANDOM"
         });
-    }, 1000)
+    }, 7000)
 });
 
 
