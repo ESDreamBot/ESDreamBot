@@ -1350,7 +1350,7 @@ client.on('message',function(message) {
 
 
 client.on('message', message => {
-  if (message.content.startsWith('=فعلني')) {
+  if (message.content.startsWith('!فعلني')) {
      if(!message.channel.guild) return;
   message.member.addRole(message.guild.roles.find("name", "مفعل"));
  
@@ -1364,12 +1364,10 @@ console.log("ALPHA CODES - IS START");
  
  
 client.on('message', msg => {
-  if (msg.content === `=فعلني') {
+  if (msg.content === '!فعلني') {
     msg.reply('تم تفعيلك');
   }
 });
-
-
 
 
 
