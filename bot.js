@@ -1264,6 +1264,32 @@ client.on("ready", () => {
 
 
 
+   client.on('message', msg => {
+  if(msg.content === '=hideallchannel') {
+    msg.guild.channels.forEach(c => {
+      c.overwritePermissions(msg.guild.id, {
+        SEND_MESSAGES: false,
+        READ_MESSAGES: false
+      })
+    })
+    msg.channel.send('تم')
+  }
+})   
+
+
+client.on('message', msg => {
+  if(msg.content === '=unhideallchennl') {
+    msg.guild.channels.forEach(c => {
+      c.overwritePermissions(msg.guild.id, {
+        SEND_MESSAGES: true,
+        READ_MESSAGES: true
+      })
+    })
+    msg.channel.send('تم')
+  }
+})   
+
+
 
 client.on('ready', () => {
    console.log(`----------------`);
