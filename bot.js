@@ -1078,7 +1078,7 @@ reaction3.on("collect", r => {
 
 
 giftKeys = {};
-let devs = ["ايديك","ايدي خويك او إي ادمن"]; // تقدر تضيف ايدي ثالث نفس الفكره تسو let devs = ["ايديك","ايدي خويك او إي ادمن","ايدي خويك الثالث"];
+let devs = ["491884648276819968","434282754016935937"]; 
 client.on("message", msg =>{
   let args = msg.content.split(" ").slice(1)[0];
   let cmd = msg.content.split(' ')[0]
