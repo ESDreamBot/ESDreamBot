@@ -972,6 +972,9 @@ reaction1.on("collect", r => {
 ❖=bot | معلومات البوت
 ❖=id | معلومات حسابك
 ❖=ping | البنق حقك
+❖!امر تحذير | تحذير 
+❖!امر تفعلي  | فعلني
+❖#used  | لاستخدام كود لاعتائك رانك 
 
 `)
    message.author.sendEmbed(embed)
