@@ -1404,6 +1404,47 @@ message.channel.sendFile(canvas.toBuffer());
 
 
 
+client.on("message",async msg => {//Alpha Codes
+  var moment = require("moment");//npm i moment
+var alpha = '=';//البرفكس
+  if(msg.content.startsWith(alpha + "تحذير")){
+let warnc = msg.guild.channels.find("name","warn");
+if(!warnc) return msg.reply("**لا اجد روم باْسم ❌** `اسم الروم`")
+let mention = msg.mentions.users.first();
+let one = mention;
+let fltr = m => m.author.id === msg.author.id
+await msg.reply("**منشن العضو الان | 👤 **").then(e => {
+msg.channel.awaitMessages(fltr, {time:60000, max:1
+})
+.then(co => {
+one = co.first().content;
+co.first().delete();
+let reason = '';
+  e.edit(`**${msg.author} اكتب الان السبب | :white_square_button: **`).then(e => {
+msg.channel.awaitMessages(fltr, {time:60000, max:1
+})
+    .then(co => {
+reason = co.first().content;
+co.first().delete();
+  e.edit(`**${msg.author} تم تحذيره و وصلوة للادارة | :white_check_mark: **`).then(p => {
+    p.delete(1999);
+moment.locale("ar-sa")
+let e = new Discord.RichEmbed()
+.setTitle("**Warn**")
+.addField("**User**", one,)
+.addField("**By**", msg.author,)
+.addField("**channel**", msg.channel,)
+.addField("**Time**", `${moment(msg.createdAt).fromNow()}`,)
+.addField("**Reason**", reason,)
+warnc.send(e);
+    })
+})
+})
+})
+})
+  }
+})
+
 
 
 
