@@ -972,9 +972,9 @@ reaction1.on("collect", r => {
 ❖=bot | معلومات البوت
 ❖=id | معلومات حسابك
 ❖=ping | البنق حقك
-❖!امر تحذير | تحذير 
-❖!امر تفعلي  | فعلني
-❖#used  | لاستخدام كود لاعتائك رانك 
+❖!امر تحذير | تحذير    [New] 
+❖!امر تفعلي  | فعلني    [New]
+❖#used  | لاستخدام كود لاعتائك رانك   [New] 
 
 `)
    message.author.sendEmbed(embed)
@@ -996,6 +996,9 @@ reaction2.on("collect", r => {
 ❖=roleremove @someone [rank] | ازاله الرتبه من شخص معين
 ❖=mutechannel | قفل الشات
 ❖=unmutechannel | فك منع الكتابه بلروم
+❖=mvall | نقل الجميع الي رومك الصوتي   [New]
+❖=shop  | لبيع منتج   [New] 
+
 `)
    message.author.sendEmbed(embed)
       message.reply('تم ارسالك بلخاص')
