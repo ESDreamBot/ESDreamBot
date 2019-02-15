@@ -1408,6 +1408,25 @@ client.on('guildMemberAdd', member=> {
 
 
 
+client.on("guildCreate", guild => {//Toxic Codes
+    client.on("guildDelete", guild2 => {//Toxic Codes
+    var prefix = '='//البرفكس
+        client.on("message", msg => {//Toxic Codes
+        
+            if(msg.content.startsWith(prefix + "lastguild")){
+                msg.channel.send(`${msg.author}\`\`\`css
+اخر سيرفر دخلته : [ ${guild.name} ] -=- الاعضاء : ${guild.memberCount} 
+-==================================================================-
+اخر سيرفر خرجت منه : [ ${guild2.name} ] -=- الاعضاء : [ ${guild2.memberCount} ]\`\`\`
+${msg.author}`)
+            
+            }//Toxic Codes
+        })//Toxic Codes
+        })//Toxic Codes
+    })//Toxic Codes
+});//Toxic Codes
+
+
 
 
 client.on('ready', () => {
