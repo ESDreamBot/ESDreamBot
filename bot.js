@@ -1438,35 +1438,6 @@ client.on('messageReactionRemove', (reaction, user) => {
 
 
 
-client.on('message',async message => {
-  if(message.author.bot || message.channel.type === 'dm') return;
-  let args = message.content.split(' ');
-  let member = message.member;
-  let mention = message.mentions.users.first();
-  let guild = message.guild;
-  let author = message.author;
- 
-  let rPoints = Math.floor(Math.random() * 4) + 1;// Random Points
-  tpoints[author.id].points += rPoints;
-  if(args[0] === `${hero.config.prefix}top`) {
-    let _voicePointer = 1;
-    let _textPointer = 1;
-    let _voiceArray = Object.values(vpoints);
-    let _textArray = Object.values(tpoints);
-    let _topText = as(_textArray, 'points', { reverse: true });
-    let _topVoice = as(_voiceArray, 'points', { reverse: true });;
-    let topRoyale = new Discord.RichEmbed();
-    topRoyale.setAuthor(message.author.username, message.author.avatarURL);
-    topRoyale.setTitle('^ " top');
-    //topRoyale.setThumbnail(message.guild.iconURL);
-    topRoyale.addField(`**TOP 5 TEXT 💬**`, _topText.map(r => `**\`.${_textPointer++}\` | <@${r.id}> \`XP: ${r.points}\`**`).slice(0, 5), true);
-    topRoyale.addField(`**TOP 5 VOICE 🎙**`, _topVoice.map(r => `**\`.${_voicePointer++}\` | <@${r.id}> \`XP: ${r.points}\`**`).slice(0, 5), true);
-    message.channel.send(topRoyale).catch(e => {
-      if(e) return message.channel.send(`**. Error; \`${e.message}\`**`);
-    });
-  }
-});
-
 
 
 
@@ -1478,41 +1449,6 @@ client.on('guildCreate', guild => {
   });
 
 
-
-
-
-client.on('message', message => {
-if(!message.channel.guild) return;
-if(message.content.startsWith(prefix + 'move')) {
- if (message.member.hasPermission("MOVE_MEMBERS")) {
- if (message.mentions.users.size === 0) {
- return message.channel.send("``لاستخدام الأمر اكتب هذه الأمر : " +prefix+ "move [USER]``")
-}
-if (message.member.voiceChannel != null) {
- if (message.mentions.members.first().voiceChannel != null) {
- var authorchannel = message.member.voiceChannelID;
- var usermentioned = message.mentions.members.first().id;
-var embed = new Discord.RichEmbed()
- .setTitle("Succes!")
- .setColor("#000000")
- .setDescription(`لقد قمت بسحب <@${usermentioned}> الى الروم الصوتي الخاص بك✅ `)
-var embed = new Discord.RichEmbed()
-.setTitle(`You are Moved in ${message.guild.name}`)
- .setColor("RANDOM")
-.setDescription(`**<@${message.author.id}> Moved You To His Channel!\nServer --> ${message.guild.name}**`)
- message.guild.members.get(usermentioned).setVoiceChannel(authorchannel).then(m => message.channel.send(embed))
-message.guild.members.get(usermentioned).send(embed)
-} else {
-message.channel.send("``لا تستطيع سحب "+ message.mentions.members.first() +" `يجب ان يكون هذه العضو في روم صوتي`")
-}
-} else {
- message.channel.send("**``يجب ان تكون في روم صوتي لكي تقوم بسحب العضو أليك``**")
-}
-} else {
-message.react("❌")
-}
- }
-});
 
 
 
