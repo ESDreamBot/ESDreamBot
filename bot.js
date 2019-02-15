@@ -1433,29 +1433,6 @@ client.on('message',async message => {
 
 
 
-const Discord = require("discord.js");
-const client = new Discord.Client();
- 
-let room1 = '545984479559286827'; // ايدي الروم الاول
-let room2 = '545984503923998730'; // ايدي الروم الثاني
-let room3 = '545984527747645442'; // ايدي الروم الثالث
- 
-client.on('guildMemberAdd', member => {
-    member.guild.channels.get(room1).setName(`Total Users: ${member.guild.memberCount}`);
-    let humans = member.guild.memberCount - member.guild.members.filter(m => m.user.bot).size;
-    member.guild.channels.get(room2).setName(`Total Humans: ${humans}`);
-    let bots = member.guild.members.filter(m => m.user.bot).size - 1;
-    member.guild.channels.get(room3).setName(`Total Bots: ${bots}`);
-});
-client.on('guildMemberRemove', member => {
-    member.guild.channels.get(room1).setName(`Total Users: ${member.guild.memberCount}`);
-    let humans = member.guild.memberCount - member.guild.members.filter(m => m.user.bot).size;
-    member.guild.channels.get(room2).setName(`Total Humans: ${humans}`);
-    let bots = member.guild.members.filter(m => m.user.bot).size - 1;
-    member.guild.channels.get(room3).setName(`Total Bots: ${bots}`);
-});
-
-
 
 
 
