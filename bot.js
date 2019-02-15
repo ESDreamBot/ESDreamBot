@@ -1433,8 +1433,7 @@ client.on('message',async message => {
 
 
 
-
-Code Alphacopyright arrow_down            
+           
 client.on('message', msg => {
   if (msg.content === 'السعودية') {      
     msg.react("🇸🇦")
