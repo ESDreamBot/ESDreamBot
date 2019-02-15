@@ -1410,7 +1410,7 @@ client.on('message',async message => {
   let args = message.content.split(' ');
   if(args[0] === `${prefix}bc`) {
     if(!message.member.hasPermission("ADMINISTRATOR")) return message.channel.send('⛔ | You dont have **ADMINISTRATOR** Permission!');
-    if(!args[1]) return message.channel.send('**➥ Useage:** ${prefix}bc message');
+    if(!args[1]) return message.channel.send('**➥ Useage:** =bc message');
   
     let msgCount = 0;
     let errorCount = 0;
