@@ -1434,6 +1434,156 @@ client.on('message',async message => {
 
 
 
+Code Alphacopyright arrow_down            
+client.on('message', msg => {
+  if (msg.content === 'السعودية') {      
+    msg.react("🇸🇦")
+    msg.channel.send("🇸🇦")
+  }
+});
+
+client.on('message', msg => {
+  if (msg.content === 'مصر') {      
+    msg.react("🇪🇬")
+    msg.channel.send("🇪🇬")
+  }
+});
+
+client.on('message', msg => {
+  if (msg.content === 'المغرب') {      
+    msg.react("🇲🇦")
+    msg.channel.send("🇲🇦")
+  }
+});
+
+client.on('message', msg => {
+  if (msg.content === 'العراق') {      
+    msg.react("🇮🇶")
+    msg.channel.send("🇮🇶")
+  }
+});
+
+client.on('message', msg => {
+  if (msg.content === 'الجزائر') {      
+    msg.react("🇩🇿")
+    msg.channel.send("🇩🇿")
+  }
+});
+
+client.on('message', msg => {
+  if (msg.content === 'الامارات') {      
+    msg.react("🇦🇪")
+    msg.channel.send("🇦🇪")
+  }
+});
+
+client.on('message', msg => {
+  if (msg.content === 'تونس') {      
+    msg.react("🇹🇳")
+    msg.channel.send("🇹🇳")
+  }
+});
+
+client.on('message', msg => {
+  if (msg.content === 'سوريا') {      
+    msg.react("🇸🇾")
+    msg.channel.send("🇸🇾")
+  }
+});
+
+client.on('message', msg => {
+  if (msg.content === 'ليبيا') {      
+    msg.react("🇱🇾")
+    msg.channel.send("🇱🇾")
+  }
+});
+
+client.on('message', msg => {
+  if (msg.content === 'قطر') {      
+    msg.react("🇶🇦")
+    msg.channel.send("🇶🇦")
+  }
+});
+
+client.on('message', msg => {
+  if (msg.content === 'الصومال') {      
+    msg.react("🇸🇴")
+    msg.channel.send("🇸🇴")
+  }
+});
+
+client.on('message', msg => {
+  if (msg.content === 'عمان') {      
+    msg.react("🇴🇲")
+    msg.channel.send("🇴🇲")
+  }
+});
+
+client.on('message', msg => {
+  if (msg.content === 'موريتانيا') {      
+    msg.react("🇲🇷")
+    msg.channel.send("🇲🇷")
+  }
+});
+
+
+
+arrow_down            
+const credits = JSON.parse(fs.readFileSync("./creditsCode.json", "utf8"));
+const coolDown = new Set();
+
+client.on('message',async message => {
+var prefix = "!"
+    
+if(message.author.bot) return;
+if(!credits[message.author.id]) credits[message.author.id] = {
+    credits: 50
+};
+
+let userData = credits[message.author.id];
+let m = userData.credits;
+
+fs.writeFile("./creditsCode.json", JSON.stringify(credits), (err) => {
+    if (err) console.error(err);
+  });
+  credits[message.author.id] = {
+      credits: m + 0.5,
+  }
+  
+    if(message.content.startsWith(prefix + "credit" || prefix + "credits")) {
+message.channel.send(`**${message.author.username}, your 💳 balance is \`\`${userData.credits}\`\`.**`);
+}
+});
+
+client.on('message', async message => {
+    let amount = 250;
+    if(message.content.startsWith(prefix + "daily")) {
+    if(message.author.bot) return;
+    if(coolDown.has(message.author.id)) return message.channel.send(`**⏱ | ${message.author.username}, your daily 💴 credits refreshes in \`\`1 Day\`\`.**`);
+    
+    let userData = credits[message.author.id];
+    let m = userData.credits + amount;
+    credits[message.author.id] = {
+    credits: m
+    };
+
+    fs.writeFile("./creditsCode.json", JSON.stringify(userData.credits + amount), (err) => {
+    if (err) console.error(err);
+    });
+    
+    message.channel.send(`**🏧 | ${message.author.username}, you received your 💴 ${amount} credits!**`).then(() => {
+        coolDown.add(message.author.id);
+    });
+    
+    setTimeout(() => {
+       coolDown.remove(message.author.id);
+    },86400000);
+    }
+});
+
+
+
+
 client.on('ready', () => {
    console.log(`----------------`);
       console.log(`Cyhper Script By : DREAM`);
