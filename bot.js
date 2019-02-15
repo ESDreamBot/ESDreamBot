@@ -1470,22 +1470,6 @@ client.on('message',async message => {
 
 
 
-
-
-client.on('guildMemberAdd', member => { //LAST CODES -HONRAR-
-  member.guild.fetchInvites().then(guildInvites => {
-    const ei = invites[member.guild.id];
-    const invite = guildInvites.find(i => ei.get(i.code).uses < i.uses);
-    const inviter = client.users.get(invite.inviter.id);
-    const stewart = member.guild.channels.find("name", "welcome-l-مرحبا");
-     stewart.send(`<@${member.user.id}> تمت الدعوه من <@${inviter.id}>`);
-from <@${inviter.id}>. Invite was used ${invite.uses} times since its creation.`);
-  });
-})
-
-
-
-
 client.on('guildCreate', guild => {
     var embed = new Discord.RichEmbed()
     .setColor(0x5500ff)
