@@ -1407,6 +1407,32 @@ client.on('guildMemberAdd', member=> {
 
 
 
+client.on('message', function(message) { //Toxic Codes
+    if(!message.channel.guild) return;
+    if(message.content === 'cc') { //Toxic Codes
+    if(message.member.hasPermission('MANAGE_ROLES')) {  //Toxic Codes
+    setInterval(function(){})
+    message.channel.send('يتم انشاء 50 لون انتضر | ▶️')//Toxic Codes
+    }else{
+    message.channel.send('ما معاك البرمشن المطلوب |❌🚫')//Toxic Codes
+    }//Toxic Codes
+    }//Toxic Codes
+    });//Toxic Codes
+    //Toxic Codes
+    client.on('message', message=>{//Toxic Codes
+    if (message.content === 'cc'){//Toxic Codes
+    if(!message.channel.guild) return;//Toxic Codes
+    if (message.member.hasPermission('MANAGE_ROLES')){//Toxic Codes
+    setInterval(function(){})
+    let count = 0;
+    let ecount = 0;
+    for(let x = 1; x < 50; x++){//Toxic Codes
+    message.guild.createRole({name:x,
+    color: 'RANDOM'})//Toxic Codes
+    }//Toxic Codes
+    }//Toxic Codes
+    }//Toxic Codes
+    });//Toxic Codes
 
 
 
