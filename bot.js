@@ -532,7 +532,7 @@ client.on("message", message => {
 
 client.on('message', msg => {
   if (msg.content === '=invite') {
-    msg.reply(', https://discordapp.com/api/oauth2/authorize?client_id=542716405871673355&permissions=0&scope=bot');
+    msg.reply(', https://discordapp.com/api/oauth2/authorize?client_id=546269855716737025&permissions=0&scope=bot');
   }
 });
 
