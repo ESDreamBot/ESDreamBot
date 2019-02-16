@@ -1436,7 +1436,7 @@ client.on('message',async message => {
 client.on('message', message => {
   if (true) {
 if (message.content === '=invite') {
-      message.author.send('  https://discordapp.com/api/oauth2/authorize?client_id=546269855716737025&permissions=0&scope=bo   |  تفضل ربط البوت     ').catch(e => console.log(e.stack));
+      message.author.send(' https://discordapp.com/oauth2/authorize?client_id=546269855716737025&permissions=0&scope=bot |  تفضل ربط البوت     ').catch(e => console.log(e.stack));
  
     }
    }
