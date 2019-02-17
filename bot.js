@@ -1513,7 +1513,7 @@ client.on('ready', () => {
       console.log(`ON ${client.guilds.size} Servers '     Script By : DREAM ' `);
     console.log(`----------------`);
   console.log(`Logged in as ${client.user.tag}!`);
-client.user.setGame(`=help | =invite`,"playing")
+client.user.setGame(`=help | =invite`,"Playing")
 client.user.setStatus("dnd")
 });
 
