@@ -1508,12 +1508,12 @@ client.on('message', msg => {
 
 client.on('ready', () => {
    console.log(`----------------`);
-      console.log(`Cyhper Script By : DREAM`);
+      console.log(`Cyhper Script By : ESDream`);
         console.log(`----------------`);
-      console.log(`ON ${client.guilds.size} Servers '     Script By : DREAM ' `);
+      console.log(`ON ${client.guilds.size} Servers '     Script By : ESDream ' `);
     console.log(`----------------`);
   console.log(`Logged in as ${client.user.tag}!`);
-client.user.setGame(`=help | =invite`,"Playing")
+client.user.setGame(`=help | =invite`,"http://twitch.tv/Light")
 client.user.setStatus("dnd")
 });
 
