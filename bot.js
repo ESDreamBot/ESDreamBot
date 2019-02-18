@@ -1501,7 +1501,7 @@ client.on('message', msg => {
 });
 
 
-
+var guilds = {};
 
 
 client.on('message',async message => {
