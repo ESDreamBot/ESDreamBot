@@ -1510,7 +1510,7 @@ client.on('message',async message => {
 
 if(!message.channel.guild) return message.reply(' ');
 
-  let rank = message.guild.member(message.author).roles.find('name', 'discord-js', 'Pro discord-js');
+  let rank = message.guild.member(message.author).roles.find('name', 'discord-js', 'Pro-discord-js');
 
   if (!rank) return message.channel.send('🛑 **| يجب ان تمتلك رتبة سبورت لأستخدام هذا الأمر.**');
 
