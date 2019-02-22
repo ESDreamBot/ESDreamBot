@@ -1580,6 +1580,8 @@ if (message.content.startsWith(prefix + 'setavatar')) {
 
 
 
+
+
 client.on('ready', () => {
    console.log(`----------------`);
       console.log(`Cyhper Script By : ESDream`);
