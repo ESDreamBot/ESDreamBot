@@ -1639,7 +1639,6 @@ client.on('message',async message => {
 
 
 
-const prefix = '=' // ادممن بريفكس
  
  
 const developers = ["491884648276819968"] // ايدي صاحب البوت
