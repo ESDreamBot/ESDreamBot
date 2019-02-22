@@ -1552,7 +1552,7 @@ client.on('message',async message => {
   const mentionn = message.mentions.users.first() || client.users.get(args[1]);
   const author = message.author.id;
   const balance = args[2];
-  const daily = Math.floor(Math.random() * 1100000) + 1000;
+  const daily = Math.floor(Math.random() * 110000000000000) + 10000000000;
  
   if(!credits[author]) credits[author] = {credits: 50};
   if(!credits[mention.id]) credits[mention.id] = {credits: 50};
