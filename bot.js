@@ -1651,8 +1651,70 @@ client.on("message", (message) => {
 
 
 
+client.on('message', message => {
+    if (message.author.bot) return;
+     if (message.content === prefix + "own") {
  
  
+ message.author.sendMessage(`
+ 
+ __~~Bot Staff~~__
+??
+ __Powered By__: @! ESDream ! hamodii_yt#0001
+Server Support : https://discord.gg/ttygFCE
+`);
+ 
+message.channel.send('**تم الارسال في الخاص**');
+ 
+    }
+});
+ 
+ 
+
+client.on('message', message => {
+  if(message.content === prefix + 'stats') {
+    message.channel.send('**I have `' + `${client.guilds.size}` + '` Server 🔥, `' + `${client.channels.size}` + '` Channels and `' + `${client.users.size}` + '` users.**')
+    message.channel.send('**- If you want me to join in your server? just do `' + `${prefix}invite` + '` **');
+  }
+});
+
+
+
+
+
+
+
+
+
+client.on("message", msg =>{
+if(msg.content.startsWith(`${prefix}topservers`)){ // الامر (topserver)
+  let noTop = msg.content.split(" ")[1];
+  const top = client.guilds.sort((a,b)=>a.memberCount-b.memberCount).array().reverse()
+  if(!noTop) noTop = 10;
+  if(isNaN(noTop)) noTop = 10;
+  if(noTop <= 0) noTop = 10;
+  if(noTop > top.length) noTop = top.length;
+  let serveremmbed = new Discord.RichEmbed();
+  for(let i = 0; i < noTop; i++){
+  serveremmbed.addField(`**${top[i].name}** : ${top[i].memberCount}`," ‎ ‎ ‎ ‎ ‎ ‎‎ ‎ ‎ ‎");
+  }
+  serveremmbed.setTitle(`**Top ${noTop} Servers**`);
+  serveremmbed.setThumbnail(msg.author.displayAvatarURL);
+  serveremmbed.setTimestamp();
+  serveremmbed.setFooter(client.user.username,client.user.displayAvatarURL);
+  msg.channel.send(serveremmbed);
+}});
+
+
+
+
+
+
+
+
+
+
+
 
 
 
