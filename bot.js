@@ -1659,8 +1659,8 @@ client.on('message', message => {
  message.author.sendMessage(`
  
  __~~Bot Staff~~__
-??
- __Powered By__: @! ESDream ! hamodii_yt#0001
+@! ESDream ! hamodii_yt#0001 __ll__ @✠╠îED╣๖ۣۜØƝ๖#7991 
+ __Powered By__: @! ESDream ! hamodii_yt#0001  And  @✠╠îED╣๖ۣۜØƝ๖#7991 
 Server Support : https://discord.gg/ttygFCE
 `);
  
@@ -1706,44 +1706,6 @@ if(msg.content.startsWith(`${prefix}topservers`)){ // الامر (topserver)
 }});
 
 
-
-
-
-
-
-client.on('guildCreate', guild => {
-   
-  client.users.get("491884648276819968")
-    const Dark&Narox = new Discord.RichEmbed()
-    .setAuthor(`بوتك دخل سيرفر جديد مبروك ✅`)
-    .setDescription(`**
-  Server name: __${guild.name}__
-  Server id: __${guild.id}__
-  Server owner: __${guild.owner}__
-  Member Count: __${guild.memberCount}__
-  Servers Counter : __${client.guilds.size}__**`)
-          .setColor('#36393e')
-          .setFooter('ESDream' , client.user.avatarURL)
-         client.users.get("491884648276819968").send({Dark&Narox});
-})
- 
-client.on('guildDelete', guild => {
-   
-  client.users.get("491884648276819968")
-
-  const Dark&Narox = new Discord.RichEmbed()
-  .setAuthor(`ESDream Bot. left a server ❎`)
-  .setDescription(`**
- Server name: __${guild.name}__
- Server id: __${guild.id}__
- Server owner: __${guild.owner}__
- Members Count: __${guild.memberCount}__
- Servers Counter : __${client.guilds.size}__**`)
-         .setColor('#36393e')
-         .setFooter('ESDream' , client.user.avatarURL)
-         client.users.get("491884648276819968").send({Dark&Narox});
- 
-});
 
 
 
