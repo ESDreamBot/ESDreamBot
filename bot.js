@@ -750,7 +750,7 @@ client.on('message', message=> {
 .addField(' الاعضاء👥 ',` [${client.users.size}] `)
 .addField('الرومات📚 ',`[${client.channels.size}]`) 
 .addField(' البنق🚀 ',`[${Date.now() - message.createdTimestamp}]`) 
-.addField('مصمم  + صاحب البوت ',`@! ESDream ! hamodii_yt#0001`)
+.addField('مصمم  + صاحب البوت ',`@! ESDream ! hamodii_yt#0001   `)
 .setColor('#7d2dbe')
   message.channel.sendEmbed(embed);
     }
@@ -1659,8 +1659,8 @@ client.on('message', message => {
  message.author.sendMessage(`
  
  __~~Bot Staff~~__
-@! ESDream ! hamodii_yt#0001 __ll__ @✠╠îED╣๖ۣۜØƝ๖#7991 
- __Powered By__: @! ESDream ! hamodii_yt#0001  And  @✠╠îED╣๖ۣۜØƝ๖#7991 
+@! ESDream ! hamodii_yt#0001 
+ __Powered By__: @! ESDream ! hamodii_yt#0001   
 Server Support : https://discord.gg/ttygFCE
 `);
  
