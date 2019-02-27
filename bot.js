@@ -883,7 +883,7 @@ reaction1.on("collect", r => {
 ❖=ping | البنق حقك
 ❖!امر تحذير | تحذير    [New] 
 ❖!امر تفعلي  | فعلني    [New]
-❖#used  | لاستخدام كود لاعتائك رانك   [New] 
+❖=use  | لاستخدام كود لاعتائك رانك   [New] 
 
 `)
    message.author.sendEmbed(embed)
@@ -949,7 +949,7 @@ reaction3.on("collect", r => {
 
 
 giftKeys = {};
-let devs = ["491884648276819968","434282754016935937"]; 
+let devs = ["491884648276819968","491884648276819968"]; 
 client.on("message", msg =>{
   let args = msg.content.split(" ").slice(1)[0];
   let cmd = msg.content.split(' ')[0]
@@ -997,12 +997,12 @@ client.on("message", msg =>{
   .setFooter(client.user.username,client.user.displayAvatarURL)  
   msg.author.send(embed2);
 };
-if( cmd === `${prefix}used`){
+if( cmd === `${prefix}use`){
  
   if(!args) {  
     let embed = new Discord.RichEmbed()
     .setColor("#42f4f4")
-    .setTitle(`:x: - **الرجاء ادخال كود الهدية** \`${prefix}used <Key>\``)
+    .setTitle(`:x: - **الرجاء ادخال كود الهدية** \`${prefix}use <Key>\``)
     msg.reply(embed).then( z => z.delete(3000));
     return
 }
