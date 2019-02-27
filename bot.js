@@ -1700,12 +1700,6 @@ if(msg.content.startsWith(`${prefix}topservers`)){ // الامر (topserver)
 
 
 
-client.on('ready', () => {
-  client.user.setPresence('dnd')
-  client.user.setActivity(`=help | =invite - Servers: ${client.guilds.size} | Version: 1.0.1`)
-  console.log(' Logged in as community Bot ')
-});
-
 
 
 const zalgo = require('zalgolize');
