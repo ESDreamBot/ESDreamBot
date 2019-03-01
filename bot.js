@@ -1363,7 +1363,7 @@ client.on('guildCreate', guild => {
 
 
 client.on('guildMemberAdd', member=> {
-    member.addRole(member.guild.roles.find("name","مفعل"));
+    member.addRole(member.guild.roles.find("name","» Member ."));
 });
 
 
