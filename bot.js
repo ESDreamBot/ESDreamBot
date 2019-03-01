@@ -1647,7 +1647,7 @@ client.on('message', message => {
  __~~Bot Staff~~__
 @! ESDream ! hamodii_yt#0001 
  __Powered By__: @! ESDream ! hamodii_yt#0001   
-Server Support : https://discord.gg/ttygFCE
+Server Support : https://discord.gg/VGAsD6y
 `);
  
 message.channel.send('**تم الارسال في الخاص**');
