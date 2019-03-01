@@ -695,7 +695,7 @@ client.on('message', message => {
   if(message.content === '=support') {
   const embed = new Discord.RichEmbed()
   .setTitle('Click here')
-  .setURL('https://discord.gg/Q7Fh2yp ')
+  .setURL('https://discord.gg/4JW8RHr ')
   .setColor('RANDOM')
   message.channel.send({embed: embed});
   }
@@ -1647,7 +1647,7 @@ client.on('message', message => {
  __~~Bot Staff~~__
 @! ESDream ! hamodii_yt#0001 
  __Powered By__: @! ESDream ! hamodii_yt#0001   
-Server Support : https://discord.gg/Q7Fh2yp
+Server Support : https://discord.gg/4JW8RHr
 `);
  
 message.channel.send('**تم الارسال في الخاص**');
