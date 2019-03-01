@@ -1705,10 +1705,7 @@ if(msg.content.startsWith(`${prefix}topservers`)){ // الامر (topserver)
 
 
 
-
-
 client.on('message', msg => {
-    var  prefix = "=";
  if (msg.content.startsWith(prefix + 'cal')) {
     let args = msg.content.split(" ").slice(1);
         const question = args.join(' ');
@@ -1724,11 +1721,11 @@ client.on('message', msg => {
     const embed = new Discord.RichEmbed()
     .addField("**Input**: ",`**${question}**`, true)
     .addField("**Output**: ",`**${answer}**`, true)
-    msg.channel.send(embed)
+    msg.channel.send(embed)  .catch(console.error);
+
     }
 };
-});//Toxic Codes
-
+});
 
 	
 	
