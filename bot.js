@@ -695,7 +695,7 @@ client.on('message', message => {
   if(message.content === '=support') {
   const embed = new Discord.RichEmbed()
   .setTitle('Click here')
-  .setURL('https://discord.gg/TKTGsnC ')
+  .setURL('https://discord.gg/Q7Fh2yp ')
   .setColor('RANDOM')
   message.channel.send({embed: embed});
   }
@@ -1647,7 +1647,7 @@ client.on('message', message => {
  __~~Bot Staff~~__
 @! ESDream ! hamodii_yt#0001 
  __Powered By__: @! ESDream ! hamodii_yt#0001   
-Server Support : https://discord.gg/VGAsD6y
+Server Support : https://discord.gg/Q7Fh2yp
 `);
  
 message.channel.send('**تم الارسال في الخاص**');
@@ -1744,7 +1744,7 @@ client.on('message', msg => {
 	
 client.on('message', message => { //Toxic Codes
     if(message.channel.type === 'dm') {//Toxic Codes
-        var guildID = '542676337387634688'; // <=============== ايدي السيرفر حقك
+        var guildID = '526868866530410496'; // <=============== ايدي السيرفر حقك
         if(message.content.includes('discord.gg/')) {//Toxic Codes 
             var member = client.guilds.find(g => g.id === guildID).members.find(m => m.id === message.author.id); //Toxic Codes
             member.ban({ reason: 'ADS In Private.' }).catch(); //Toxic Codes
