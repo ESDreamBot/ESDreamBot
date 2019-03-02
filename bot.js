@@ -1889,28 +1889,5 @@ message.channel.send(embed)
 
 
 
-client.on('message', message => {
-    if (message.content.startsWith(prefix + "help")) {
-let embed = new Discord.RichEmbed()
-.setThumbnail(message.author.avatarURL)
-.addField('     **=public** ' ,' ** اوامر عامه ** ')
-.addField('     **=admin**  ' ,' **اوامر اداريه** ')
-.setColor('RANDOM')
-message.channel.sendEmbed(embed);
-}
-});
-
-client.on('message', message => {
-    if (message.content.startsWith(prefix + "admin")) {
-let embed = new Discord.RichEmbed()
-.setThumbnail(message.author.avatarURL)
-.addField('     **=bc**  ' ,' **برودكاست** ')
-.setColor('RANDOM')
-message.channel.sendEmbed(embed);
-}
-});
-
-
-
 
 client.login(process.env.BOT_TOKEN);// لا تغير فيها شيء
