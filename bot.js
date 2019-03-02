@@ -1834,4 +1834,31 @@ client.on('message', message => {
 
 
 
+
+client.on('message', message => {
+    if (message.content.startsWith("=bot")) {
+    message.channel.send({
+        embed: new Discord.RichEmbed()
+            .setAuthor(client.user.username,client.user.avatarURL)
+            .setThumbnail(client.user.avatarURL)
+            .setColor('RANDOM')
+            .setTitle('``INFO ESDream||  ||Bot`` ')
+            .addField('**بينق البوت ||  ||**' , [`${Date.now() - message.createdTimestamp}` + 'MS'], true)
+            .addField('**رامات البوت ||  ||**', `[${(process.memoryUsage().rss / 1048576).toFixed()}MB]`, true)
+            .addField('**سيرفرات الي دخلها البوت ||  ||**', [client.guilds.size], true)
+            .addField('**الرومات ||  ||**' , `[ ${client.channels.size} ]` , true)
+            .addField('**عدد المستخدمين ||  ||**' ,`[ ${client.users.size} ]` , true)
+            .addField('**اسم البوت ||  ||**' , `[ ${client.user.tag} ]` , true)
+            .addField('**ايدي البوت||  ||**' , `[ ${client.user.id} ]` , true)
+                  .addField('**My Prefix ||  ||**' , `[ = ]` , true)
+                  .addField('**My Language ||  ||**' , `[ Java Script ]` , true)
+                              .addField('**عدد اوامر البوت ||  ||**' , `[  ]` , true)
+                  .setFooter('||  || By | KillerFox ||  ||')
+    })
+}
+});
+
+
+
+
 client.login(process.env.BOT_TOKEN);// لا تغير فيها شيء
