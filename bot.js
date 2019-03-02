@@ -1904,7 +1904,6 @@ client.on('message', message => {
     if (message.content.startsWith(prefix + "admin")) {
 let embed = new Discord.RichEmbed()
 .setThumbnail(message.author.avatarURL)
-.addField('     **=clear** ' ,**مسح الشات** ')
 .addField('     **=bc**  ' ,' **برودكاست** ')
 .setColor('RANDOM')
 message.channel.sendEmbed(embed);
