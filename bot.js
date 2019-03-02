@@ -1861,4 +1861,26 @@ client.on('message', message => {
 
 
 
+
+
+
+
+client.on('message', message => {   // Sad Is Here
+  let id = message.content.split(" ").slice(1).join(" ");   // Sad Is Here
+  let men = message.mentions.users.first() || message.author;   // Sad Is Here
+  if(message.content.startsWith('=xp')) {   // Sad Is Here
+    con.query(`SELECT * FROM userDI WHERE userID = '${men.id}'`, (err, rows) => {  // Sad Is Here
+      if(err) return;  // Sad Is Here
+      if(!rows[0]) return message.channel.send("There is no details on record");   // Sad Is Here
+      let xt = rows[0].userXP   // Sad Is Here
+    message.channel.send(`${men.username} xp is ${xt}`);   // Sad Is Here
+  });  // Sad Is Here
+}  // Sad Is Here
+})  // Sad Is Here
+
+
+
+
+
+
 client.login(process.env.BOT_TOKEN);// لا تغير فيها شيء
