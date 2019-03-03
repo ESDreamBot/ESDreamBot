@@ -646,7 +646,7 @@ client.on('message', message => {
           
 
            if (message.content.startsWith(prefix + "id")) {
-           if (message.channel.id !== "542777843495731233") return;
+           if (message.channel.id !== "551834794967957514") return;
             
             if(!message.channel.guild) return message.reply(`هذا الأمر فقط ل السيرفرات ❌`);
 
@@ -1424,7 +1424,7 @@ client.on('message', message => {
 
 client.on('guildCreate', guild => {
    
-  client.channels.get("543793609384787969")
+  client.channels.get("551834464842547220")
 const embed = new Discord.RichEmbed()
    .setAuthor(`بوتك دخل سيرفر جديد مبروك ✅`)
    .setDescription(`**
@@ -1436,13 +1436,13 @@ Servers Counter : __${client.guilds.size}__**`)
          .setColor("#f3ae10")
          .addField("New Server!")
          .setFooter('ESDream Bot' , client.user.avatarURL)
-           client.channels.get("543793609384787969").send({embed}); //Sup
+           client.channels.get("551834464842547220").send({embed}); //Sup
 }
  
 );
 
 client.on('guildDelete', guild => {
-  client.channels.get("543793609384787969")
+  client.channels.get("551834464842547220")
 const embed = new Discord.RichEmbed()
    .setAuthor(`للاسف بوتك خرج من السيرفر ❎`)
    .setDescription(`**
@@ -1453,7 +1453,7 @@ Members Count: __${guild.memberCount}__
 Servers Counter : __${client.guilds.size}__**`)
          .setColor("#f3ae10")
          .setFooter('ESDream Bot' , client.user.avatarURL)
-           client.channels.get("543793609384787969").send({embed});
+           client.channels.get("551834464842547220").send({embed});
 }
  
 );
