@@ -1887,6 +1887,14 @@ message.channel.send(embed)
 
 
 
+client.on('message', msg => {
+  if (msg.content === '=invite') {
+    msg.reply(', **❯ Informetion Commands | الأوامر التعريفية :**                                                                                                  =admin');
+  }
+});
+
+  
+
 
 
 
