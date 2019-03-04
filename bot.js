@@ -1887,11 +1887,6 @@ message.channel.send(embed)
 
 
 
-client.on('message', msg => {
-  if (msg.content === '=help') {
-    msg.reply(', **❯ Informetion Commands | الأوامر التعريفية :**                                                                                                  =admin');
-  }
-});
 
   
 
